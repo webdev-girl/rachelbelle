@@ -102,8 +102,8 @@
             </div>
 
         </div>
-      <div id="belle-banner-image">
-          <img src="/images/bellebanner.jpg" alt="banner"/>
-      </div>
+      {{-- <div id="belle-banner-image">
+          <img src="images/bellebanner.jpg" alt="banner"/>
+      </div> --}}
     </body>
 </html>
