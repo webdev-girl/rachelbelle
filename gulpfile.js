@@ -13,6 +13,6 @@ gulp.watch('resources/assets/scss/*.scss', ['scss']);
 
 gulp.task('default', ['watch']);
 
-// browserSync.init({
-//   proxy: 'localhost:8000'
-// });
+browserSync.init({
+  proxy: 'localhost:8000'
+});
