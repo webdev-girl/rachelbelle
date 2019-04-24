@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{csrf_token()}}">
+        {{-- <meta name="csrf-token" content="{{csrf_token()}}"> --}}
         <title>Rachel Belle</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous8/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -79,9 +79,9 @@
         <div class="container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto">
             <h2 class="title">Welcome to Rachel Belle Boutiques</h2>
         </div>
-        <div id="belle-banner-image">
+        {{-- <div id="belle-banner-image">
             <img src="/images/grey.jpg" alt="banner" width="1200" height="350"/>
-        </div>
+        </div> --}}
             <div class="container belle-banner">
                  <div class="row">
                      <div class="col-sm">
