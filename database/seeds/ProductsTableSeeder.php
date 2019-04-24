@@ -13,7 +13,7 @@ class ProductsTableSeeder extends Seeder
                 tempor incididunt ut labore et dolore magna aliqua consequat.',
                 'units' => 21,
                 'price' => 200.10,
-                'image' => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/mens-better-than-naked-jacket-AVMH_LC9_hero.png',
+                'image' => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/womens-better-than-naked-jacket-AVKL_NN4_hero.png',
                 'created_at' => new DateTime,
                 'updated_at' => null,
             ],

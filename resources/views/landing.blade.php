@@ -41,7 +41,7 @@
                background: violet;
                align-items: center;
                margin-bottom: 20px;
-               margin-top: -20px;
+               margin-top: 20px;
            }
             .title {
                font-size: 60px;
@@ -51,9 +51,9 @@
         </style>
     </head>
     <body>
-        <div class="container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto">
+        {{-- <div class="container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto">
             <h2 class="title">Welcome to Rachel Belle Boutiques</h2>
-        </div>
+        </div> --}}
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel links">
             <div class="container">
                 <router-link :to="{name: 'home'}" class="navbar-brand">Rachel Belle</router-link>
@@ -68,14 +68,20 @@
                         <router-link :to="{ name: 'login' }" class="nav-link" v-if="!isLoggedIn">Login</router-link>
                         <router-link :to="{ name: 'register' }" class="nav-link" v-if="!isLoggedIn">Register</router-link>
                         {{-- <span v-if="isLoggedIn">
-                            <router-link :to="{ name: 'userboard' }" class="nav-link" v-if="user_type == 0"> Hi, {{name}}</router-link>
-                            <router-link :to="{ name: 'admin' }" class="nav-link" v-if="user_type == 1"> Hi, {{name}}</router-link>
-                        </span> --}}
+                            <router-link :to="{ name: 'userboard' }" class="nav-link" v-if="user_type == 0"> Hi, {{name}}</router-link> --}}
+                            {{-- <router-link :to="{ name: 'admin' }" class="nav-link" v-if="user_type == 1"> Hi, {{name}}</router-link>
+                        </span>  --}}
                         <li class="nav-link" v-if="isLoggedIn" @click="logout"> Logout</li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <div class="container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto">
+            <h2 class="title">Welcome to Rachel Belle Boutiques</h2>
+        </div>
+        <div id="belle-banner-image">
+            <img src="/images/grey.jpg" alt="banner" width="1200" height="350"/>
+        </div>
             <div class="container belle-banner">
                  <div class="row">
                      <div class="col-sm">
@@ -89,8 +95,8 @@
                                  Rachel Belle
                              </div> --}}
                              <div id="belle-banner-image">
-                                 <img src="/images/bellebanner.jpg" alt="banner" width="500" height="250"/>
-                             </div>
+                               <img src="/images/bellebanner.jpg" alt="banner" width="500" height="250"/>
+                           </div>
                          </div>
                      </div>
                      <div class="col-sm">
@@ -155,5 +161,6 @@
               setTimeout(showSlides, 3000); // Change image every 2 seconds
             }
     </script>
+
     </body>
 </html>

@@ -20,6 +20,7 @@
               'units' => $request->units,
               'price' => $request->price,
               'image' => $request->image
+
           ]);
 
           return response()->json([
@@ -58,6 +59,7 @@
       public function updateUnits(Request $request, Product $product)
       {
           $product->units = $product->units + $request->get('units');
+          
           $status = $product->save();
 
           return response()->json([

@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class=" position-ref">
+            <div class=" position-ref">
                 @if (Route::has('login'))
                     <div class="top-right links">
                         @auth
@@ -123,7 +123,7 @@
                         @endauth
                     </div>
                 @endif
-            </div> --}}
+            </div>
         </div>
         <div class="container">
             <div class="row">
@@ -134,9 +134,9 @@
                 </div>
                 <div class="col-sm">
                     <div class="content">
-                        {{-- <div class="title m-b-md">
+                        <div class="title m-b-md">
                             Rachel Belle
-                        </div> --}}
+                        </div>
                         <div id="belle-banner-image">
                             <img src="/images/bellebanner.jpg" alt="banner" width="500" height="250"/>
                         </div>
