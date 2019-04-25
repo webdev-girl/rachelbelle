@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {{-- <meta name="csrf-token" content="{{csrf_token()}}"> --}}
+        <meta name="csrf-token" content="{{csrf_token()}}">
         <title>Rachel Belle</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous8/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -51,26 +51,25 @@
         </style>
     </head>
     <body>
-        {{-- <div class="container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto">
-            <h2 class="title">Welcome to Rachel Belle Boutiques</h2>
-        </div> --}}
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel links">
-            <div class="container">
-                <router-link :to="{name: 'home'}" class="navbar-brand">Rachel Belle</router-link>
+
+          <nav class="navbar navbar-expand-md navbar-light navbar-laravel links">
+             <div class="container">
+                 <a href="welcome">Rachel Belle</a>
+                <router-link :to="{name: 'welcome'}" class="navbar-brand">Rachel Belle</router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
+                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                     <ul class="navbar-nav mr-auto"></ul>
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <router-link :to="{ name: 'login' }" class="nav-link" v-if="!isLoggedIn">Login</router-link>
+
+                     <ul class="navbar-nav ml-auto">
+                        {{-- <router-link :to="{ name: 'login' }" class="nav-link" v-if="!isLoggedIn">Login</router-link>
                         <router-link :to="{ name: 'register' }" class="nav-link" v-if="!isLoggedIn">Register</router-link>
-                        {{-- <span v-if="isLoggedIn">
-                            <router-link :to="{ name: 'userboard' }" class="nav-link" v-if="user_type == 0"> Hi, {{name}}</router-link> --}}
-                            {{-- <router-link :to="{ name: 'admin' }" class="nav-link" v-if="user_type == 1"> Hi, {{name}}</router-link>
-                        </span>  --}}
+                        <span v-if="isLoggedIn">
+                            <router-link :to="{ name: 'userboard' }" class="nav-link" v-if="user_type == 0"> Hi, {{name}}</router-link>
+                            <router-link :to="{ name: 'admin' }" class="nav-link" v-if="user_type == 1"> Hi, {{name}}</router-link>
+                        </span> --}}
                         <li class="nav-link" v-if="isLoggedIn" @click="logout"> Logout</li>
                     </ul>
                 </div>
@@ -136,10 +135,10 @@
              <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
              <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-             {{-- <script type="text/javascript" src="{{url::asset('js/coolstuff.js') }}" ></script> --}}
+             <script type="text/javascript" src="{{url::asset('js/coolstuff.js') }}" ></script>
              <script src="{{ mix('js/bootstrap.js') }}"></script>
              <script src="{{ mix('js/app.js') }}"></script>
-        @include('partials.footer')
+
         <script>
             var slideIndex = 0;
             showSlides();
@@ -161,6 +160,6 @@
               setTimeout(showSlides, 3000); // Change image every 2 seconds
             }
     </script>
-
+    @include('partials.footer')
     </body>
 </html>

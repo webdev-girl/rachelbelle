@@ -69,9 +69,9 @@ export default {
             let c_password = this.password_confirmation
             axios.post('api/register', {name, email, password, c_password}).then(response => {
                 let data = response.data
-                localStorage.setItem('bigStore.user', JSON.stringify(data.user))
-                localStorage.setItem('bigStore.jwt', data.token)
-                if (localStorage.getItem('bigStore.jwt') != null) {
+                localStorage.setItem('rachelbelle.user', JSON.stringify(data.user))
+                localStorage.setItem('rachelbelle.jwt', data.token)
+                if (localStorage.getItem('rachelbelle.jwt') != null) {
                     this.$emit('loggedIn')
                     let nextUrl = this.$route.params.nextUrl
                     this.$router.push((nextUrl != null ? nextUrl : '/'))

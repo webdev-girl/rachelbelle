@@ -1977,7 +1977,7 @@ __webpack_require__.r(__webpack_exports__);
         units: "",
         price: "",
         description: "",
-        image: false
+        avatar: false
       };
     }
   },
@@ -1997,7 +1997,7 @@ __webpack_require__.r(__webpack_exports__);
         axios.post("/api/upload-file", formData, {
           headers: headers
         }).then(function (response) {
-          _this.product.image = response.data;
+          _this.product.avatar = response.data;
 
           _this.$emit('close', _this.product);
         });
@@ -2103,13 +2103,13 @@ __webpack_require__.r(__webpack_exports__);
       var units = product.units;
       var price = product.price;
       var description = product.description;
-      var image = product.image;
+      var image = product.avatar;
       axios.post("/api/products/", {
         name: name,
         units: units,
         price: price,
         description: description,
-        image: image
+        avatar: avatar
       }).then(function (response) {
         return _this3.products.push(product);
       });
@@ -2225,9 +2225,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   beforeMount: function beforeMount() {
     this.setComponent(this.$route.params.page);
-    this.user = JSON.parse(localStorage.getItem('bigStore.  d fuser'));
+    this.user = JSON.parse(localStorage.getItem('rachelbelle.  d fuser'));
     axios.defaults.headers.common['Content-Type'] = 'application/json';
-    axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('bigStore.jwt');
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('rachelbelle.jwt');
   },
   methods: {
     setComponent: function setComponent(value) {
@@ -2319,7 +2319,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       name: null,
       user_type: 0,
-      isLoggedIn: localStorage.getItem('bigStore.jwt') != null
+      isLoggedIn: localStorage.getItem('rachelbelle.jwt') != null
     };
   },
   mounted: function mounted() {
@@ -2328,18 +2328,18 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     setDefaults: function setDefaults() {
       if (this.isLoggedIn) {
-        var user = JSON.parse(localStorage.getItem('bigStore.user'));
+        var user = JSON.parse(localStorage.getItem('rachelbelle.user'));
         this.name = user.name;
         this.user_type = user.is_admin;
       }
     },
     change: function change() {
-      this.isLoggedIn = localStorage.getItem('bigStore.jwt') != null;
+      this.isLoggedIn = localStorage.getItem('rachelbelle.jwt') != null;
       this.setDefaults();
     },
     logout: function logout() {
-      localStorage.removeItem('bigStore.jwt');
-      localStorage.removeItem('bigStore.user');
+      localStorage.removeItem('rachelbelle.jwt');
+      localStorage.removeItem('rachelbelle.user');
       this.change();
       this.$router.push('/');
     }
@@ -2409,7 +2409,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    this.isLoggedIn = localStorage.getItem('bigStore.jwt') != null;
+    this.isLoggedIn = localStorage.getItem('rachelbelle.jwt') != null;
   },
   beforeMount: function beforeMount() {
     var _this = this;
@@ -2418,10 +2418,10 @@ __webpack_require__.r(__webpack_exports__);
       return _this.product = response.data;
     });
 
-    if (localStorage.getItem('bigStore.jwt') != null) {
-      this.user = JSON.parse(localStorage.getItem('bigStore.user'));
+    if (localStorage.getItem('rachelbelle.jwt') != null) {
+      this.user = JSON.parse(localStorage.getItem('rachelbelle.user'));
       axios.defaults.headers.common['Content-Type'] = 'application/json';
-      axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('bigStore.jwt');
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('rachelbelle.jwt');
     }
   },
   methods: {
@@ -2609,10 +2609,10 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function (response) {
           var user = response.data.user;
           var is_admin = user.is_admin;
-          localStorage.setItem('bigStore.user', JSON.stringify(user));
-          localStorage.setItem('bigStore.jwt', response.data.token);
+          localStorage.setItem('rachelbelle.user', JSON.stringify(user));
+          localStorage.setItem('rachelbelle.jwt', response.data.token);
 
-          if (localStorage.getItem('bigStore.jwt') != null) {
+          if (localStorage.getItem('rachelbelle.jwt') != null) {
             _this.$emit('loggedIn');
 
             if (_this.$route.params.nextUrl != null) {
@@ -2717,10 +2717,10 @@ __webpack_require__.r(__webpack_exports__);
         c_password: c_password
       }).then(function (response) {
         var data = response.data;
-        localStorage.setItem('bigStore.user', JSON.stringify(data.user));
-        localStorage.setItem('bigStore.jwt', data.token);
+        localStorage.setItem('rachelbelle.user', JSON.stringify(data.user));
+        localStorage.setItem('rachelbelle.jwt', data.token);
 
-        if (localStorage.getItem('bigStore.jwt') != null) {
+        if (localStorage.getItem('rachelbelle.jwt') != null) {
           _this.$emit('loggedIn');
 
           var nextUrl = _this.$route.params.nextUrl;
@@ -39353,11 +39353,11 @@ var render = function() {
                     {
                       name: "show",
                       rawName: "v-show",
-                      value: _vm.data.image != null,
-                      expression: "data.image != null"
+                      value: _vm.data.avatar != null,
+                      expression: "data.avatar != null"
                     }
                   ],
-                  attrs: { src: _vm.data.image }
+                  attrs: { src: _vm.data.avatar }
                 }),
                 _vm._v(" "),
                 _c("input", {
@@ -39760,7 +39760,10 @@ var render = function() {
           [
             _c(
               "router-link",
-              { staticClass: "navbar-brand", attrs: { to: { name: "home" } } },
+              {
+                staticClass: "navbar-brand",
+                attrs: { to: { name: "welcome" } }
+              },
               [_vm._v("Rachel Belle")]
             ),
             _vm._v(" "),
@@ -39832,14 +39835,10 @@ var render = function() {
                       : _vm._e(),
                     _vm._v(" "),
                     _vm.isLoggedIn
-                      ? _c(
-                          "li",
-                          {
-                            staticClass: "nav-link",
-                            on: { click: _vm.logout }
-                          },
-                          [_vm._v(" Logout")]
-                        )
+                      ? _c("li", {
+                          staticClass: "nav-link",
+                          on: { click: _vm.logout }
+                        })
                       : _vm._e()
                   ],
                   1
@@ -40150,7 +40149,7 @@ var render = function() {
                     { attrs: { to: { path: "/products/" + product.id } } },
                     [
                       _c("img", {
-                        attrs: { src: product.image, alt: product.name }
+                        attrs: { src: product.avatar, alt: product.name }
                       }),
                       _vm._v(" "),
                       _c("h5", [
@@ -40547,7 +40546,7 @@ var render = function() {
         { staticClass: "col-md-8 offset-md-2" },
         [
           _c("img", {
-            attrs: { src: _vm.product.image, alt: _vm.product.name }
+            attrs: { src: _vm.product.avatar, alt: _vm.product.name }
           }),
           _vm._v(" "),
           _c("h3", {
@@ -40626,7 +40625,10 @@ var render = function() {
                 { staticClass: "col-md-4 product-box", on: { key: index } },
                 [
                   _c("img", {
-                    attrs: { src: order.product.image, alt: order.product.name }
+                    attrs: {
+                      src: order.product.avatar,
+                      alt: order.product.name
+                    }
                   }),
                   _vm._v(" "),
                   _c("h5", [
@@ -55639,7 +55641,7 @@ router.beforeEach(function (to, from, next) {
   if (to.matched.some(function (record) {
     return record.meta.requiresAuth;
   })) {
-    if (localStorage.getItem('bigStore.jwt') == null) {
+    if (localStorage.getItem('rachelbelle.jwt') == null) {
       next({
         path: '/login',
         params: {
@@ -55647,7 +55649,7 @@ router.beforeEach(function (to, from, next) {
         }
       });
     } else {
-      var user = JSON.parse(localStorage.getItem('bigStore.user'));
+      var user = JSON.parse(localStorage.getItem('rachelbelle.user'));
 
       if (to.matched.some(function (record) {
         return record.meta.is_admin;

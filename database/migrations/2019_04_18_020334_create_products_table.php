@@ -14,7 +14,8 @@ class CreateProductsTable extends Migration
             $table->string('description');
             $table->unsignedInteger('units')->default(0);
             $table->double('price');
-            $table->string('image');
+            // $table->string('image');
+            $table->string('avatar')->default('user.jpg');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -51,15 +51,15 @@ export default {
         }
     },
     mounted() {
-        this.isLoggedIn = localStorage.getItem('bigStore.jwt') != null
+        this.isLoggedIn = localStorage.getItem('rachelbelle.jwt') != null
     },
     beforeMount() {
         axios.get(`/api/products/${this.pid}`).then(response => this.product = response.data)
 
-        if (localStorage.getItem('bigStore.jwt') != null) {
-            this.user = JSON.parse(localStorage.getItem('bigStore.user'))
+        if (localStorage.getItem('rachelbelle.jwt') != null) {
+            this.user = JSON.parse(localStorage.getItem('rachelbelle.user'))
             axios.defaults.headers.common['Content-Type'] = 'application/json'
-            axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('bigStore.jwt')
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('rachelbelle.jwt')
         }
     },
     methods : {

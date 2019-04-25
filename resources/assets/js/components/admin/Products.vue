@@ -70,9 +70,9 @@ export default {
             let units = product.units
             let price = product.price
             let description = product.description
-            let image = product.image
+            let image = product.avatar
 
-            axios.post("/api/products/", {name, units, price, description, image})
+            axios.post("/api/products/", {name, units, price, description, avatar})
                  .then(response => this.products.push(product))
         }
     }

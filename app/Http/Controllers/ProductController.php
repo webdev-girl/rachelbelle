@@ -7,6 +7,11 @@
 
   class ProductController extends Controller
   {
+      // public function __construct()
+      // {
+      //     $this->middleware('auth');
+      // }
+
       public function index()
       {
           return response()->json(Product::all(),200);
@@ -19,7 +24,7 @@
               'description' => $request->description,
               'units' => $request->units,
               'price' => $request->price,
-              'image' => $request->image
+              'avatar' => $request->avatar
 
           ]);
 
@@ -37,17 +42,17 @@
 
       public function uploadFile(Request $request)
       {
-          if($request->hasFile('image')){
-              $name = time()."_".$request->file('image')->getClientOriginalName();
-              $request->file('image')->move(public_path('images'), $name);
+          if($request->hasFile('avatar')){
+              $name = time()."_".$request->file('avatar')->getClientOriginalName();
+              $request->file('avatar')->move(public_path('avatars'), $name);
           }
-          return response()->json(asset("images/$name"),201);
+          return response()->json(asset("avatars/$name"),201);
       }
 
       public function update(Request $request, Product $product)
       {
           $status = $product->update(
-              $request->only(['name', 'description', 'units', 'price', 'image'])
+              $request->only(['name', 'description', 'units', 'price', 'avatar'])
           );
 
           return response()->json([
@@ -59,7 +64,7 @@
       public function updateUnits(Request $request, Product $product)
       {
           $product->units = $product->units + $request->get('units');
-          
+
           $status = $product->save();
 
           return response()->json([
@@ -77,4 +82,20 @@
               'message' => $status ? 'Product Deleted!' : 'Error Deleting Product'
           ]);
       }
+
+      // public function update_avatar(Request $request){
+      //
+      //      $request->validate([
+      //          'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      //      ]);
+      //
+      //      $user = Auth::user();
+      //      $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
+      //      $request->avatar->storeAs('avatars', $avatarName);
+      //      $user->avatar = $avatarName;
+      //      $user->save();
+      //      return back();
+      //
+      //
+      //      }
   }

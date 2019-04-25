@@ -1,17 +1,18 @@
-body{
-    margin: 0;
-}
 html, body {
 
         background-color: violet;
-        color: #636b6f;
+        /* color: #636b6f; */
+        color: white;
         font-family: 'Lora', serif;
         font-weight: 200;
         height: 100vh;
         margin: 0;
         padding: 0;
     }
-
+.belle-title{
+    color: white;
+    text-align: center;
+}
     .full-height {
         height: 100vh;
     }
@@ -43,6 +44,27 @@ html, body {
 
     .m-b-md {
         margin-bottom: 30px;
+    }
+
+    .Navbar {
+      background-color: #46ACC2;
+      display: flex;
+      padding: 16px;
+      font-family: sans-serif;
+      color: white;
+      display: none;
+    }
+    .Navbar__Link {
+      padding-right: 8px;
+    }
+    .Navbar__Items {
+      display: flex;
+    }
+    .Navbar__Items--right {
+      margin-left:auto;
+    }
+    .Navbar__Link-toggle {
+      display: block;
     }
 .links > a {
     color: #636b6f;
@@ -89,18 +111,14 @@ html, body {
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: violet;}
+
 .belle-banner{
     margin-top: 50px;
 }
 #belle-logo-image{
-    margin-top: 20px;
+    margin-top: 5px;
+}
 
-}
-.polka-dot-image{
-    float: right;
-    margin-right: 2%;
-    margin-top: 70%;
-}
 .banner-title{
     margin-left: 20%;
     padding: 0;
@@ -123,7 +141,7 @@ img {vertical-align: middle;}
   max-width: 1000px;
   position: relative;
   margin: auto;
-  margin-top: 40px; }
+  margin-top: 20px; }
 
 /* Caption text */
 .text {
@@ -197,7 +215,73 @@ img {vertical-align: middle;}
          text-decoration: none;
          text-transform: uppercase;}
 
- /* On smaller screens, decrease text size */
+         @media only screen and (max-width: 700px) {
+           .Navbar__Items,
+           .Navbar {
+             flex-direction: column;
+             display: block;
+           }
+         .Navbar__Items {
+             display:none;
+           }
+         .Navbar__Items--right {
+             margin-left:0;
+            display: block;
+           }
+         .Navbar__ToggleShow {
+             display: flex;
+             display: block;
+           }
+         .Navbar__Link-toggle {
+             align-self: flex-end;
+             display: initial;
+             position: absolute;
+             cursor: pointer;
+             display: block;
+            }
+         }
+ @media only screen and (max-width: 600px) {
+
+  body {
+    background-color: lightblue;
+  }
+
+  .title {
+     display: none;
+  }
+
+  #belle-logo-image{
+    display: none;
+      }
+
+      .slideshow-container {
+        max-width: 60%;
+        position: relative;
+        margin: auto;
+        margin-top: 20px; }
+
+        .position-ref {
+             float: right;
+             display: none;
+      }
+
+      .dropbtn {
+        background-color: lightblue;
+        color: #636b6f;
+        padding: 10px;
+        font-size: 11px;
+     }
+
+      .dropdown-content {
+        background-color: lightblue;
+     }
+
+      .dropdown-content a:hover {background-color: lightblue;}
+      .dropdown:hover .dropbtn {background-color: lightblue;}
+
+
+/* On smaller screens, decrease text size */
  @media only screen and (max-width: 300px) {
    .text {font-size: 11px}
+
  }

@@ -51,10 +51,10 @@
                         let user = response.data.user
                         let is_admin = user.is_admin
 
-                        localStorage.setItem('bigStore.user', JSON.stringify(user))
-                        localStorage.setItem('bigStore.jwt', response.data.token)
+                        localStorage.setItem('rachelbelle.user', JSON.stringify(user))
+                        localStorage.setItem('rachelbelle.jwt', response.data.token)
 
-                        if (localStorage.getItem('bigStore.jwt') != null) {
+                        if (localStorage.getItem('rachelbelle.jwt') != null) {
                             this.$emit('loggedIn')
                             if (this.$route.params.nextUrl != null) {
                                 this.$router.push(this.$route.params.nextUrl)

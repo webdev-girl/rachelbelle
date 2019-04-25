@@ -15,7 +15,7 @@
                     @endif
 
                     You are logged in!
-                        <li><a href="{{ url('/logout') }}"> logout </a></li>
+                        {{-- <li><a href="{{ url('/logout') }}"> logout </a></li> --}}
                     </div>
             </div>
         </div>

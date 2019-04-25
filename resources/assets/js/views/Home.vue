@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-md-4 product-box" v-for="(product,index) in products" @key="index">
                             <router-link :to="{ path: '/products/'+product.id}">
-                                <img :src="product.image" :alt="product.name">
+                                <img :src="product.avatar" :alt="product.name">
                                 <h5><span v-html="product.name"></span>
                                     <span class="small-text text-muted float-right">$ {{product.price}}</span>
                                 </h5>

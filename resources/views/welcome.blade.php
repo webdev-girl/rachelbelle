@@ -1,8 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
         <title>Rachel Belle</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous8/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -10,56 +11,59 @@
         <link rel="icon" type="image/x-icon" href="../images/favicon.png">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-
-
         <style>
             html, body {
-                /* background-color: #fff; */
-                background-color: violet;
-                color: #636b6f;
-                /* font-family: 'Nunito', sans-serif; */
-                font-family: 'Lora', serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-                padding: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: right;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                float: right;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-                padding: 0;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
+            font-family: 'Lora', serif;
+            height: 100vh;
             }
         </style>
     </head>
     <body>
+        <div class="Navbar">
+           <div class="Navbar__Link Navbar__Link-brand">
+               Rachel Belle Boutiques
+            </div>
+            <div class="Navbar__Link Navbar__Link-toggle">
+              <i class="fas fa-bars"></i>
+            </div>
+          <nav class="Navbar__Items">
+            <div class="Navbar__Link">
+                <div class="col-sm">
+                    <a href="https://nova.laravel.com">Blouses</a>
+                    <a href="https://nova.laravel.com">Bottoms</a>
+                    <a href="https://nova.laravel.com">Dresses</a>
+                </div>
+            </div>
+            <div class="Navbar__Link">
+                <a href="https://nova.laravel.com">Blouses</a>
+                <a href="https://nova.laravel.com">Bottoms</a>
+                <a href="https://nova.laravel.com">Dresses</a>
+            </div>
+            <div class="Navbar__Link">
+                <a href="https://nova.laravel.com">Sign up</a>
+                <a href="https://nova.laravel.com">Rewards</a>
+            </div>
+          </nav>
+          <nav class="Navbar__Items Navbar__Items--right">
+            <div class="Navbar__Link">
+                @if (Route::has('login'))
+                    <div class="top-right links">
+                        @auth
+                                <a href="{{ url('/home') }}">Home</a>
+                            @else
+                                <a href="{{ route('login') }}">Login</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}">Register</a>
+                            @endif
+                        @endauth
+                    </div>
+                @endif
+            </div>
+        </nav>
+        </div>
+
+
         <div class="links">
             <div class="dropdown links">
                 <button class="dropbtn">New arrivals</button>
@@ -101,9 +105,9 @@
                                 <a href="https://nova.laravel.com">Rewards</a>
                             </div>
                             <div class="col-sm">
-                                    <p>Recieve 10% off when you reach 500 points</p>
-                                    <p> for more details on how you save</p>
-                                    <p> sign up to become a VIP and start collecting today</p>
+                                <p>Recieve 10% off when you reach 500 points</p>
+                                <p> for more details on how you save</p>
+                                <p> sign up to become a VIP and start collecting today</p>
                             </div>
                         </div>
                     </div>
@@ -125,6 +129,9 @@
                 @endif
             </div>
         </div>
+        <div class="belle-title">
+            <h2 class="title">Rachel Belle Boutiques</h2>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-sm">
@@ -134,49 +141,50 @@
                 </div>
                 <div class="col-sm">
                     <div class="content">
-                        <div class="title m-b-md">
-                            Rachel Belle
-                        </div>
                         <div id="belle-banner-image">
-                            <img src="/images/bellebanner.jpg" alt="banner" width="500" height="250"/>
+                                <img src="/images/bellebanner.jpg" alt="banner" width="500" height="250"/>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <div class="col-sm">
                     <div class="slideshow-container">
 
                         <div class="mySlides fade">
                           <div class="numbertext">1 / 3</div>
-                          <img src="/images/polka-dots.jpg" style="width:100% "width="220" height="300">
+                          <img src="/images/polka-dots.jpg" style="width:100%"  height="300">
                           <div class="text">Office</div>
                         </div>
 
                         <div class="mySlides fade">
                           <div class="numbertext">2 / 3</div>
-                          <img src="/images/model-white.jpg" style="width:100%" width="220" height="300">
+                          <img src="/images/model-white.jpg" style="width:100%"  height="300">
                             <div class="text">Casual</div>
                         </div>
 
                         <div class="mySlides fade">
                           <div class="numbertext">3 / 3</div>
-                          <img src="/images/dress.jpg" style="width:100%" width="220" height="300">
+                          <img src="/images/dress.jpg" style="width:100%" height="300">
                           <div class="text">Dressy</div>
                         </div>
 
                     </div>
                     <br/>
                     <div style="text-align:center">
-                          <span class="dot"></span>
-                          <span class="dot"></span>
-                          <span class="dot"></span>
+                       <span class="dot"></span>
+                       <span class="dot"></span>
+                       <span class="dot"></span>
                     </div>
                 </div>
             </div>
+                {{-- <img class="rounded-circle" src="/storage/avatars/{{ $currentUser->avatar }}" /> --}}
         </div>
+        <script type="text/javascript" src="{{url::asset('js/coolstuff.js') }}" ></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         {{-- <script type="text/javascript" src="{{url::asset('js/coolstuff.js') }}" ></script> --}}
+        {{-- <script src="{{ mix('js/bootstrap.js') }}"></script> --}}
+
 
         <script>
             var slideIndex = 0;
@@ -199,6 +207,7 @@
               setTimeout(showSlides, 3000); // Change image every 2 seconds
             }
     </script>
+
     @include('partials.footer')
     </body>
 </html>

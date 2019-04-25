@@ -2,7 +2,7 @@
      <div>
          <nav class="navbar navbar-expand-md navbar-light navbar-laravel links">
              <div class="container">
-                 <router-link :to="{name: 'home'}" class="navbar-brand">Rachel Belle</router-link>
+                 <router-link :to="{name: 'welcome'}" class="navbar-brand">Rachel Belle</router-link>
                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                      <span class="navbar-toggler-icon"></span>
                  </button>
@@ -18,7 +18,7 @@
                              <router-link :to="{ name: 'userboard' }" class="nav-link" v-if="user_type == 0"> Hi, {{name}}</router-link>
                              <router-link :to="{ name: 'admin' }" class="nav-link" v-if="user_type == 1"> Hi, {{name}}</router-link>
                          </span>
-                         <li class="nav-link" v-if="isLoggedIn" @click="logout"> Logout</li>
+                         <li class="nav-link" v-if="isLoggedIn" @click="logout"></li>
                      </ul>
                  </div>
              </div>
@@ -34,7 +34,7 @@
          return {
              name: null,
              user_type: 0,
-             isLoggedIn: localStorage.getItem('bigStore.jwt') != null
+             isLoggedIn: localStorage.getItem('rachelbelle.jwt') != null
          }
      },
      mounted() {
@@ -43,18 +43,18 @@
      methods : {
          setDefaults() {
              if (this.isLoggedIn) {
-                 let user = JSON.parse(localStorage.getItem('bigStore.user'))
+                 let user = JSON.parse(localStorage.getItem('rachelbelle.user'))
                  this.name = user.name
                  this.user_type = user.is_admin
              }
          },
          change() {
-             this.isLoggedIn = localStorage.getItem('bigStore.jwt') != null
+             this.isLoggedIn = localStorage.getItem('rachelbelle.jwt') != null
              this.setDefaults()
          },
          logout(){
-             localStorage.removeItem('bigStore.jwt')
-             localStorage.removeItem('bigStore.user')
+             localStorage.removeItem('rachelbelle.jwt')
+             localStorage.removeItem('rachelbelle.user')
              this.change()
              this.$router.push('/')
          }
