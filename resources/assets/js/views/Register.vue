@@ -6,6 +6,7 @@
                     <div class="card-header">Register</div>
                     <div class="card-body">
                         <form>
+
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
                                 <div class="col-md-6">
@@ -69,6 +70,7 @@ export default {
             let c_password = this.password_confirmation
             axios.post('api/register', {name, email, password, c_password}).then(response => {
                 let data = response.data
+                console.log(this.response)
                 localStorage.setItem('rachelbelle.user', JSON.stringify(data.user))
                 localStorage.setItem('rachelbelle.jwt', data.token)
                 if (localStorage.getItem('rachelbelle.jwt') != null) {

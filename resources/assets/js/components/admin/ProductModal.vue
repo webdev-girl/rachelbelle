@@ -12,7 +12,7 @@
                           Price: <input type="text" v-model="data.price">
                           <textarea v-model="data.description" placeholder="description"></textarea>
                           <span >
-                              <img :src="data.avatar" v-show="data.avatar != null">
+                              <img :src="data.image" v-show="data.image != null">
                               <input type="file" id="file" @change="attachFile">
                           </span>
                       </slot>
@@ -95,7 +95,7 @@
                   units: "",
                   price: "",
                   description: "",
-                  avatar: false
+                  image: false
               }
           }
       },
@@ -105,11 +105,11 @@
           },
           uploadFile(event) {
               if (this.attachment != null) {
-                  var formData = new FormData();
+                  var formData = new formData();
                   formData.append("image", this.attachment)
                   let headers = {'Content-Type': 'multipart/form-data'}
                   axios.post("/api/upload-file", formData, {headers}).then(response => {
-                      this.product.avatar = response.data
+                      this.product.image = response.data
                       this.$emit('close', this.product)
                   })
               } else {

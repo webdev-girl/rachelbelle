@@ -13,8 +13,11 @@
       // }
 
       public function index()
-      {
+       {
+          echo asset('storage/file.txt');
+           Storage::disk('local')->put('file.txt', 'Contents');
           return response()->json(Product::all(),200);
+
       }
 
       public function store(Request $request)
@@ -24,7 +27,7 @@
               'description' => $request->description,
               'units' => $request->units,
               'price' => $request->price,
-              'avatar' => $request->avatar
+              'image' => $request->image
 
           ]);
 
@@ -42,17 +45,17 @@
 
       public function uploadFile(Request $request)
       {
-          if($request->hasFile('avatar')){
-              $name = time()."_".$request->file('avatar')->getClientOriginalName();
-              $request->file('avatar')->move(public_path('avatars'), $name);
+          if($request->hasFile('image')){
+              $name = time()."_".$request->file('image')->getClientOriginalName();
+              $request->file('image')->move(public_path('images'), $name);
           }
-          return response()->json(asset("avatars/$name"),201);
+          return response()->json(asset("images/$name"),201);
       }
 
       public function update(Request $request, Product $product)
       {
           $status = $product->update(
-              $request->only(['name', 'description', 'units', 'price', 'avatar'])
+              $request->only(['name', 'description', 'units', 'price', 'image'])
           );
 
           return response()->json([

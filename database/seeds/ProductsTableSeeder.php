@@ -28,13 +28,12 @@ class ProductsTableSeeder extends Seeder
     {
         $products = [
             [
-                'name' => "MEN'S BETTER THAN NAKED & JACKET",
+                'name' => "Ladies BETTER THAN NAKED & JACKET",
                 'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua consequat.',
                 'units' => 21,
                 'price' => 200.10,
-
-                // 'image' => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/womens-better-than-naked-jacket-AVKL_NN4_hero.png',
+                'image' => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/womens-better-than-naked-jacket-AVKL_NN4_hero.png',
                 'created_at' => new DateTime,
                 'updated_at' => null,
             ],
@@ -44,7 +43,7 @@ class ProductsTableSeeder extends Seeder
                 tempor incididunt ut labore et dolore magna aliqua consequat.',
                 'units' => 400,
                 'price' => 1600.21,
-                // 'image' => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/womens-better-than-naked-jacket-AVKL_NN4_hero.png',
+                'image' => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/womens-better-than-naked-jacket-AVKL_NN4_hero.png',
                 'created_at' => new DateTime,
                 'updated_at' => null,
             ],
@@ -54,7 +53,7 @@ class ProductsTableSeeder extends Seeder
                 tempor incididunt ut labore et dolore magna aliqua consequat.',
                 'units' => 37,
                 'price' => 378.00,
-                // 'image' => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/womens-single-track-shoe-ALQF_JM3_hero.png',
+                'image' => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/womens-single-track-shoe-ALQF_JM3_hero.png',
                 'created_at' => new DateTime,
                 'updated_at' => null,
             ],
@@ -64,7 +63,7 @@ class ProductsTableSeeder extends Seeder
                 tempor incididunt ut labore et dolore magna aliqua consequat.',
                 'units' => 10,
                 'price' => 21.10,
-                // 'image' => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/enduro-boa-hydration-pack-AJQZ_JK3_hero.png',
+                'image' => 'http://images.thenorthface.com/is/image/TheNorthFace/236x204_CLR/enduro-boa-hydration-pack-AJQZ_JK3_hero.png',
                 'created_at' => new DateTime,
                 'updated_at' => null,
             ]

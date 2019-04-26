@@ -1,15 +1,15 @@
 <template>
     <div>
-        <!-- <div class="container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto">
+        <div class="container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto">
             <h2 class="title">Welcome to Rachel Belle Boutiques</h2>
-        </div> -->
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-4 product-box" v-for="(product,index) in products" @key="index">
                             <router-link :to="{ path: '/products/'+product.id}">
-                                <img :src="product.avatar" :alt="product.name">
+                                <img :src="product.image" :alt="product.name">
                                 <h5><span v-html="product.name"></span>
                                     <span class="small-text text-muted float-right">$ {{product.price}}</span>
                                 </h5>
@@ -44,7 +44,7 @@
     border: 1px solid #cccccc;
     padding: 10px 15px;
 }
- /* .hero-section {
+ .hero-section {
     height: 30vh;
     background: violet;
     align-items: center;
@@ -54,5 +54,5 @@
  .title {
     font-size: 60px;
     color: #ffffff;
-} */
+}
 </style>
