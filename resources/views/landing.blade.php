@@ -1,6 +1,6 @@
- @extends('layouts.app')
-
- <head>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
      <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,13 +58,13 @@
                     <ul class="navbar-nav mr-auto"></ul>
 
                      <ul class="navbar-nav ml-auto">
-                        <router-link :to="{ name: 'login' }" class="nav-link" v-if="!isLoggedIn">Login</router-link>
-                        <router-link :to="{ name: 'register' }" class="nav-link" v-if="!isLoggedIn">Register</router-link>
+                        {{-- <router-link :to="{ name: 'login' }" class="nav-link" v-if="!isLoggedIn">Login</router-link>
+                        <router-link :to="{ name: 'register' }" class="nav-link" v-if="!isLoggedIn">Register</router-link> --}}
                         <span v-if="isLoggedIn">
-                            <router-link :to="{ name: 'userboard' }" class="nav-link" v-if="user_type == 0"> Hi, {{name}}</router-link>
-                            <router-link :to="{ name: 'admin' }" class="nav-link" v-if="user_type == 1"> Hi, {{name}}</router-link>
+                            {{-- <router-link :to="{ name: 'userboard' }" class="nav-link" v-if="user_type == 0"> Hi, {{name}}</router-link>
+                            <router-link :to="{ name: 'admin' }" class="nav-link" v-if="user_type == 1"> Hi, {{name}}</router-link> --}}
                         </span>
-                        {{-- <li class="nav-link" v-if="isLoggedIn" @click="logout"> Logout</li> --}}
+                        <li class="nav-link" v-if="isLoggedIn" @click="logout"> Logout</li>
                     </ul>
                 </div>
             </div>

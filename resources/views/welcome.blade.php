@@ -19,7 +19,7 @@
         </style>
     </head>
     <body>
-        <div class="Navbar">
+        {{-- <div class="Navbar">
            <div class="Navbar__Link Navbar__Link-brand">
                Rachel Belle Boutiques
             </div>
@@ -61,7 +61,7 @@
                 @endif
             </div>
         </nav>
-    </div>
+    </div> --}}
 
 
         <div class="links">
@@ -132,6 +132,11 @@
         <div class="belle-title">
             <h2 class="title">Rachel Belle Boutiques</h2>
         </div>
+        <div class="content">
+            <div>
+                <img src="/images/frontbanner.jpg" alt="banner" width="100%" />
+            </div>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-sm">
@@ -140,12 +145,12 @@
                     </div>
                 </div>
                 <div class="col-sm">
-                    <div class="content">
+                    {{-- <div class="content">
                         <div id="belle-banner-image">
-                                <img src="/images/bellebanner.jpg" alt="banner" width="500" height="250"/>
-                            </div>
+                            <img src="/images/frontbanner.jpg" alt="banner" width="100%" />
                         </div>
-                    </div>
+                    </div> --}}
+                </div>
                 <div class="col-sm">
                     <div class="slideshow-container">
 
