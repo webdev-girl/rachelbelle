@@ -46,26 +46,7 @@ html, body {
         margin-bottom: 30px;
     }
 
-    .Navbar {
-      background-color: #46ACC2;
-      display: flex;
-      padding: 16px;
-      font-family: sans-serif;
-      color: white;
-      display: none;
-    }
-    .Navbar__Link {
-      padding-right: 8px;
-    }
-    .Navbar__Items {
-      display: flex;
-    }
-    .Navbar__Items--right {
-      margin-left:auto;
-    }
-    .Navbar__Link-toggle {
-      display: block;
-    }
+
 .links > a {
     color: #636b6f;
     padding: 0 20px;
@@ -215,31 +196,8 @@ img {vertical-align: middle;}
          text-decoration: none;
          text-transform: uppercase;}
 
-         @media only screen and (max-width: 700px) {
-           .Navbar__Items,
-           .Navbar {
-             flex-direction: column;
-             display: block;
-           }
-         .Navbar__Items {
-             display:none;
-           }
-         .Navbar__Items--right {
-             margin-left:0;
-            display: block;
-           }
-         .Navbar__ToggleShow {
-             display: flex;
-             display: block;
-           }
-         .Navbar__Link-toggle {
-             align-self: flex-end;
-             display: initial;
-             position: absolute;
-             cursor: pointer;
-             display: block;
-            }
-         }
+@media only screen and (max-width: 700px) {
+    }
  @media only screen and (max-width: 600px) {
 
   body {

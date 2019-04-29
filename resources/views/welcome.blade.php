@@ -19,51 +19,6 @@
         </style>
     </head>
     <body>
-        {{-- <div class="Navbar">
-           <div class="Navbar__Link Navbar__Link-brand">
-               Rachel Belle Boutiques
-            </div>
-            <div class="Navbar__Link Navbar__Link-toggle">
-              <i class="fas fa-bars"></i>
-            </div>
-          <nav class="Navbar__Items">
-            <div class="Navbar__Link">
-                <div class="col-sm">
-                    <a href="https://nova.laravel.com">Blouses</a>
-                    <a href="https://nova.laravel.com">Bottoms</a>
-                    <a href="https://nova.laravel.com">Dresses</a>
-                </div>
-            </div>
-            <div class="Navbar__Link">
-                <a href="https://nova.laravel.com">Blouses</a>
-                <a href="https://nova.laravel.com">Bottoms</a>
-                <a href="https://nova.laravel.com">Dresses</a>
-            </div>
-            <div class="Navbar__Link">
-                <a href="https://nova.laravel.com">Sign up</a>
-                <a href="https://nova.laravel.com">Rewards</a>
-            </div>
-          </nav>
-         <nav class="Navbar__Items Navbar__Items--right">
-            <div class="Navbar__Link">
-                @if (Route::has('login'))
-                    <div class="top-right links">
-                        @auth
-                                <a href="{{ url('/home') }}">Home</a>
-                            @else
-                                <a href="{{ route('login') }}">Login</a>
-
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}">Register</a>
-                            @endif
-                        @endauth
-                    </div>
-                @endif
-            </div>
-        </nav>
-    </div> --}}
-
-
         <div class="links">
             <div class="dropdown links">
                 <button class="dropbtn">New arrivals</button>
