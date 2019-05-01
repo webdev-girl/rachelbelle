@@ -39,9 +39,9 @@ export default {
     },
     beforeMount() {
         this.setComponent(this.$route.params.page)
-        this.user = JSON.parse(localStorage.getItem('rachelbelle.  d fuser'))
+        this.user = JSON.parse(localStorage.getItem('bigStore.  d fuser'))
         axios.defaults.headers.common['Content-Type'] = 'application/json'
-        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('rachelbelle.jwt')
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('bigStore.jwt')
     },
     methods: {
         setComponent(value) {
@@ -69,6 +69,6 @@ export default {
 </script>
 
 <style scoped>
-.hero-section { height: 20vh; background: #ababab; align-items: center; margin-bottom: 20px; margin-top: -20px; }
+/* .hero-section { height: 20vh; background: #ababab; align-items: center; margin-bottom: 20px; margin-top: -20px; } */
 .title { font-size: 60px; color: #ffffff; }
 </style>

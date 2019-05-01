@@ -14,15 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/{any}', function(){
-         return view('landing');
- })->where('any', '.*');
+// Route::get('/', function () {
+//     return view('home');
+// });
+// Route::get('/{any}', function(){
+//          return view('landing');
+//  })->where('any', '.*');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/logout', 'LogoutController@logout');
 
+
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/home', 'HomeController@index')->name('home');

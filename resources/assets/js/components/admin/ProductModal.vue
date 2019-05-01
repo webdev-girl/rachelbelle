@@ -105,7 +105,7 @@
           },
           uploadFile(event) {
               if (this.attachment != null) {
-                  var formData = new formData();
+                  var formData = new FormData();
                   formData.append("image", this.attachment)
                   let headers = {'Content-Type': 'multipart/form-data'}
                   axios.post("/api/upload-file", formData, {headers}).then(response => {

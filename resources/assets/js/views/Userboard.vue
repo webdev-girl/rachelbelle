@@ -42,10 +42,10 @@ export default {
         }
     },
     beforeMount() {
-        this.user = JSON.parse(localStorage.getItem('rachelbelle.user'))
+        this.user = JSON.parse(localStorage.getItem('bigStore.user'))
 
         axios.defaults.headers.common['Content-Type'] = 'application/json'
-        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('rachelbelle.jwt')
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('bigStore.jwt')
 
         axios.get(`api/users/${this.user.id}/orders`)
              .then(response => this.orders = response.data)

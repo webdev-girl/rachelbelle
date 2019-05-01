@@ -34,7 +34,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 import App from './views/App'
 import Home from './views/Home'
@@ -112,13 +112,13 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
-        if (localStorage.getItem('rachelbelle.jwt') == null) {
+        if (localStorage.getItem('bigStore.jwt') == null) {
             next({
                 path: '/login',
                 params: { nextUrl: to.fullPath }
             })
         } else {
-            let user = JSON.parse(localStorage.getItem('rachelbelle.user'))
+            let user = JSON.parse(localStorage.getItem('bigStore.user'))
             if (to.matched.some(record => record.meta.is_admin)) {
                 if (user.is_admin == 1) {
                     next()
