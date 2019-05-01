@@ -31,6 +31,10 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 // const app = new Vue({
 //     el: '#app'
 // });
+
+import VueTypedJs from 'vue-typed-js'
+Vue.use(VueTypedJs)
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 

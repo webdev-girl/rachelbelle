@@ -98,6 +98,8 @@ html, body {
 }
 #belle-logo-image{
     margin-top: 5px;
+    text align-content: center;
+    border-radius: 20%;
 }
 
 .banner-title{
@@ -200,7 +202,7 @@ img {vertical-align: middle;}
     }
  @media only screen and (max-width: 600px) {
 
-  /* body {
+  body {
     background-color: lightblue;
   }
 
@@ -232,7 +234,7 @@ img {vertical-align: middle;}
 
       .dropdown-content {
         background-color: lightblue;
-     } */
+     }
 
       .dropdown-content a:hover {background-color: lightblue;}
       .dropdown:hover .dropbtn {background-color: lightblue;}
